@@ -13,7 +13,7 @@ export default class ParrotRouter {
 
     public createParrotRoutes = (): Router => {
         this.router.post('/create', this.controller.saveParrot);
-        this.router.get('/get', this.controller.getParrotByUniqueId);
+        this.router.get('/get/:uniqueId', this.controller.getParrotByUniqueId);
         return this.router;
     }
 }
