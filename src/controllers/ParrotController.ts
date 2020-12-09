@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 const express = require('express');
 const ParrotModel = require('../database/models/Parrot');
 
-class ParrotController {
+export default class ParrotController {
     constructor() {
     }
 
@@ -27,6 +27,4 @@ class ParrotController {
 
         res.status(400).json({status: 400, message: 'Parrot not found!'})
     }
-
-
 }

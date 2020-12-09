@@ -1,4 +1,5 @@
 import Connection from "./database/Connection";
+import ParrotRouter from "./routes/ParrotRouter";
 
 const express = require('express');
 const dotenv = require('dotenv');
@@ -8,6 +9,7 @@ dotenv.config({path: `../.env`});
 const PORT = process.env.APP_PORT;
 
 App.use(express.json());
+App.use('/api/parrots/', new ParrotRouter().createParrotRoutes());
 
 new Connection().setupDatabaseConnection();
 
